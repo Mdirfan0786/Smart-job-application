@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apply – Taskify Careers</title>
+    <meta
+      name="description"
+      content="Apply for jobs at Taskify with our simple online application form."
+    />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/form.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <div id="header"></div>
+    </header>
+
+    <main>
+      <div class="form-container">
+        <h1>Job Application</h1>
+        <p class="form-subtitle">
+          Fill in the details below — your progress is auto-saved.
+        </p>
+
+        <!-- Analytics Row -->
+        <div class="analytics-row">
+          <div class="stat-card">
+            <div class="stat-card__num" id="statStarted">0</div>
+            <div class="stat-card__label">Forms started</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__num" id="statSubmitted">0</div>
+            <div class="stat-card__label">Submitted</div>
+          </div>
+        </div>
+
+        <div class="progress-bar">
+          <div id="progress"></div>
+        </div>
+        <p class="progress-label" id="progressLabel">Step 1 of 4</p>
+
+        <form id="jobForm" novalidate>
+          <!-- Step 1 -->
+          <section class="form-step active">
+            <div class="form-card">
+              <h2>Step 1: Personal Info</h2>
+
+              <div class="field_group">
+                <label for="name"
+                  >Full Name <span class="required">*</span></label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="e.g. Md Irfan"
+                  autocomplete="name"
+                />
+                <span class="field-error" id="nameErr"></span>
+              </div>
+
+              <div class="field_group">
+                <label for="email"
+                  >Email Address <span class="required">*</span></label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="irfan@example.com"
+                  autocomplete="email"
+                />
+                <span class="field-error" id="emailErr"></span>
+              </div>
+
+              <div class="field_group">
+                <label for="phone"
+                  >Phone Number <span class="required">*</span></label
+                >
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="+91 98765 43210"
+                  autocomplete="tel"
+                />
+                <span class="field-error" id="phoneErr"></span>
+              </div>
+
+              <div class="btn-row">
+                <button type="button" class="btn btn--primary next">
+                  Next →
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Step 2 -->
+          <section class="form-step">
+            <div class="form-card">
+              <h2>Step 2: Experience</h2>
+
+              <div class="field_group">
+                <label for="experience"
+                  >Years of Experience <span class="required">*</span></label
+                >
+                <input
+                  type="number"
+                  id="experience"
+                  name="experience"
+                  min="0"
+                  max="50"
+                  placeholder="e.g. 3"
+                />
+                <span class="field-error" id="experienceErr"></span>
+              </div>
+
+              <div class="field_group">
+                <label for="skills"
+                  >Key Skills <span class="required">*</span></label
+                >
+                <input
+                  type="text"
+                  id="skills"
+                  name="skills"
+                  placeholder="JavaScript, React, Node.js"
+                />
+                <span class="field-hint">Separate skills with commas.</span>
+                <span class="field-error" id="skillsErr"></span>
+              </div>
+
+              <!-- LeaderShip - only show when experience > 5 -->
+              <section class="cond-field" id="condLeadership">
+                <div class="field_group">
+                  <label for="leadershipRoles">
+                    Leadership Roles <span class="required">*</span>
+                    <span class="badge badge--info" style="margin-left: 6px"
+                      >5+ years</span
+                    >
+                  </label>
+                  <input
+                    type="text"
+                    id="leadershipRoles"
+                    name="leadershipRoles"
+                    placeholder="e.g. Tech Lead, Engineering Manager"
+                  />
+                  <span class="field-hint"
+                    >Required for candidates with more than 5 years of
+                    experience.</span
+                  >
+                  <span class="field-error" id="leaderErr"></span>
+                </div>
+              </section>
+
+              <div class="btn-row">
+                <button type="button" class="btn btn--secondary prev">
+                  ← Back
+                </button>
+                <button type="button" class="btn btn--primary next">
+                  Next →
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Step 3 -->
+          <section class="form-step">
+            <div class="form-card">
+              <h2>Step 3: Upload Resume</h2>
+
+              <div class="field_group">
+                <label for="resume"
+                  >Resume / CV <span class="required">*</span></label
+                >
+                <input
+                  type="file"
+                  id="resume"
+                  name="resume"
+                  accept=".pdf,.doc,.docx"
+                />
+                <div class="upload-hint">
+                  <span>Accepted: PDF, DOC, DOCX</span>
+                  <span>·</span>
+                  <span>Max size: 5 MB</span>
+                </div>
+                <div class="field-hint" id="fileLabel"></div>
+                <span class="field-error" id="resumeErr"></span>
+              </div>
+
+              <div class="btn-row">
+                <button type="button" class="btn btn--secondary prev">
+                  ← Back
+                </button>
+                <button type="button" class="btn btn--primary next">
+                  Next →
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Step 4 -->
+          <section class="form-step">
+            <div class="form-card">
+              <h2>Step 4: Review &amp; Submit</h2>
+
+              <div id="review"></div>
+
+              <div class="btn-row">
+                <button type="button" class="btn btn--secondary prev">
+                  ← Back
+                </button>
+                <button type="submit" class="btn btn--primary">
+                  Submit Application
+                </button>
+              </div>
+            </div>
+          </section>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <div id="footer"></div>
+    </footer>
+    <script src="../js/loader.js"></script>
+    <script type="module" src="../js/form.js"></script>
+  </body>
+</html>
