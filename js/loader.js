@@ -3,7 +3,7 @@ const footer = document.getElementById("footer");
 
 // Header load
 if (header) {
-  fetch("../components/header.html")
+  fetch("/components/header.html")
     .then((res) => res.text())
     .then((data) => {
       header.innerHTML = data;
@@ -35,7 +35,7 @@ if (header) {
 
 // Footer load
 if (footer) {
-  fetch("../components/footer.html")
+  fetch("/components/footer.html")
     .then((res) => res.text())
     .then((data) => {
       footer.innerHTML = data;
